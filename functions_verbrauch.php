@@ -145,7 +145,7 @@ function getMedia($cname, $CDir){
 
 function readFromDB ($sqlStmt)  //fuehrt ein select auf der DB aus und liefert 
 {                              //das Ergebnis als Array
-    $con = mysql_connect("localhost","odm","SecretPassw0rd!");
+    $con = mysql_connect("localhost","username","password");
     if (!$con)
         {
         die('Could not connect: ' . mysql_error());
@@ -170,7 +170,7 @@ function readFromDB ($sqlStmt)  //fuehrt ein select auf der DB aus und liefert
 
 function updateDB ($sqlStmt)   //fuehrt ein update auf der DB aus
 {
-    $con = mysql_connect("localhost","odm","SecretPassw0rd!");
+    $con = mysql_connect("localhost","username","password");
     if (!$con)
         {
         die('Could not connect: ' . mysql_error());
@@ -186,7 +186,7 @@ mysql_close($con);
 
 function insertToDB ($sqlStmt)   //fuehrt ein insert auf der DB aus
 {
-    $con = mysql_connect("localhost","odm","SecretPassw0rd!");
+    $con = mysql_connect("localhost","username","password");
     if (!$con)
         {
         die('Could not connect: ' . mysql_error());
