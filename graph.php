@@ -7,8 +7,7 @@ require_once 'functions_verbrauch.php';
 $what = $_GET[name];;
 
 
-$db = mysql_connect("localhost","odm","SecretPassw0rd!") or die ("failed to connect");
-mysql_select_db("verbrauch");
+$db = getDBCon();
 #Arrayindex festlegen
 switch ($what) {
   case "gas":
