@@ -40,7 +40,7 @@ function insertData(){
     
 //Holt die Daten aus der Datenbank und bereitet sie auf zur Ausgabe
 function showStats(){   //Holt die Daten
-    $sql = "select * from verbrauch";
+    $sql = "select * from verbrauch order by datum desc";
     $answer = readFromDB($sql);
     $retval = makeTable($answer, "verbrauch");
     //$retval = $retval . print_r(calcVerbrauch($answer,0)) . print_r(getDates($answer));
@@ -69,11 +69,11 @@ function makeTable ($array,$type) {
     //print "anzahl = $anzahl<br>";
     for ($x = 0; $x < $anzahl; $x++){
         $retval = $retval . getRow($array[$x],"td")."</tr>";
-        if($x >= 1000) break;
+        if($x >= 10) break;
     }
     $retval = $retval . "</table>";
-    if($anzahl >= 1000){
-    print "Anzahl: $anzahl<br>Es werden nur die ersten 1000 Treffer angezeigt!<br>";}
+    if($anzahl >= 10){
+    print "Anzahl: $anzahl<br>Es werden nur die ersten 10 Ergebnisse angezeigt!<br>";}
     return $retval;
 }
 
